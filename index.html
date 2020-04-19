@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="https://kit.fontawesome.com/a06a967094.js" crossorigin="anonymous"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <title>myProject</title>
+      <style>
+         .icon {
+         display: inline;
+         }
+         body {
+         background: #262626;
+         font-family: Verdana, Geneva, sans-serif;
+         }
+         .demopadding {
+         margin-left: 60%;
+         }
+         .icon {
+         display: inline;
+         position: relative;
+         text-align: center;
+         padding: 20px;
+         }
+         .grid-container {
+         display: flex;
+         }
+         .icon i {
+         font-size: 20px;
+         position: absolute;
+         left: 9px;
+         top: 10px;
+         }
+         .icon.social {
+         float: left;
+         margin: 7px 5px 0 0;
+         cursor: pointer;
+         background: #c6b196;
+         color: #ffffff;
+         transition: 0.5s;
+         -moz-transition: 0.5s;
+         -webkit-transition: 0.5s;
+         -o-transition: 0.5s;
+         border-radius: 100%;
+         }
+         .icon.social.fb i {
+         left: 13px;
+         top: 10px;
+         }
+         .icon.social.tw i {
+         left: 11px;
+         }
+         .icon.social.in i {
+         left: 11px;
+         }
+         body {
+         font-family: 'Noto Sans', sans-serif;
+         margin: 0;
+         width: 100%;
+         height: 100vh;
+         background: #ffffff;
+         -webkit-font-smoothing: antialiased;
+         -moz-osx-font-smoothing: grayscale;
+         }
+         .hamburger {
+         background: none;
+         position: absolute;
+         top: 0;
+         right: 0;
+         line-height: 45px;
+         padding: 5px 15px 0px 15px;
+         color: #999;
+         border: 0;
+         font-size: 1.4em;
+         font-weight: bold;
+         cursor: pointer;
+         outline: none;
+         z-index: 10000000000000;
+         }
+         .cross {
+         background: none;
+         position: absolute;
+         top: 0px;
+         right: 0;
+         padding: 7px 15px 0px 15px;
+         color: rgb(27, 6, 6);
+         border: 0;
+         font-size: 3em;
+         line-height: 65px;
+         font-weight: bold;
+         cursor: pointer;
+         outline: none;
+         z-index: 10000000000000;
+         }
+         .menu {
+         z-index: 1000000;
+         font-weight: bold;
+         font-size: 0.8em;
+         width: 20%;
+         background-color: white;
+         position: absolute;
+         text-align: center;
+         font-size: 12px;
+         left: 5px;
+         top: 200px
+         }
+         .menu ul {
+         margin: 0;
+         padding: 0;
+         list-style-type: none;
+         list-style-image: none;
+         }
+         .menu li {
+         display: block;
+         padding: 15px 0 15px 0;
+         border-bottom: #dddddd 1px solid;
+         }
+         .menu li:hover {
+         display: block;
+         background: black;
+         padding: 15px 0 15px 0;
+         border-bottom: #dddddd 1px solid;
+         }
+         .menu ul li a {
+         text-decoration: none;
+         margin: 0px;
+         color: black;
+         }
+         .menu ul li a:hover {
+         color: rgb(192, 27, 27);
+         text-decoration: none;
+         }
+         .menu a {
+         text-decoration: none;
+         color: #666;
+         }
+         .menu a:hover {
+         text-decoration: none;
+         color: #666;
+         }
+         .glyphicon-home {
+         color: black;
+         font-size: 1.5em;
+         margin-top: 5px;
+         margin: 0 auto;
+         }
+         header {
+         display: inline-block;
+         font-size: 12px;
+         }
+         span {
+         padding-left: 20px;
+         }
+         a {
+         color: #336699;
+         }
+         .grid-box {
+         width: 100%;
+         height: 600px;
+         background-color: #cccccc;
+         }
+         .box-content {
+         text-align: center;
+         color: white;
+         padding-top: 200px;
+         }
+         .box-content h1 {
+         font-size: 40px;
+         font-family: Verdana, Geneva, Tahoma, sans-serif;
+         }
+         .box-content p {
+         font-size: 20px;
+         font-family: Verdana, Geneva, Tahoma, sans-serif;
+         }
+         .image-content {
+         height: 500px;
+         width: 680px;
+         background-color: #cdcbbf;
+         position: absolute;
+         margin-top: -505px;
+         opacity: 80%;
+         }
+         .image-content h1 {
+         color: black;
+         margin-left: 50px;
+         margin-top: 200px;
+         font-family: Verdana, Geneva, Tahoma, sans-serif;
+         }
+         .image-content h3 {
+         color: white;
+         margin-left: 50px;
+         font-size: 20px;
+         font-family: Verdana, Geneva, Tahoma, sans-serif;
+         }
+         .image-content button {
+         margin-left: 50px;
+         background-color: white;
+         }
+         @media only screen and (max-width: 600px) {
+         .navbar {
+         max-width: 100%;
+         }
+         }
+         @media only screen and (max-width: 601px) {
+         .image-content {
+         max-width: 200px;
+         }
+         }
+         @media only screen and (max-width: 602px) {
+         .box-content {
+         padding-top: 80px;
+         }
+         }
+         @media only screen and (max-width: 603px) {
+         .grid-image {
+         height: 180px;
+         }
+         }
+         @media only screen and (min-width: 768px) {
+         .image-content p {
+         max-width: 50%;
+         font-size: 20px;
+         }
+         }
+         @media only screen and (max-width: 605px) {
+         .image-content h1 {
+         margin-top: 80px;
+         font-size: 20px;
+         }
+         }
+         .service-header h1 {
+         padding: 10px 0px;
+         margin-bottom: 24px;
+         display: flex;
+         flex-direction: row;
+         align-items: center;
+         justify-content: center;
+         font-size: 13px;
+         font-family: Verdana;
+         }
+         .service-header p {
+         display: flex;
+         flex-direction: row;
+         align-items: center;
+         justify-content: center;
+         font-size: 10px;
+         font-family: Verdana;
+         color: #c6b196;
+         }
+         @media only screen and (max-width: 606px) {
+         .companyService {
+         margin-top: 280px;
+         }
+         }
+         @media only screen and (min-width: 1200px) {
+         .company {
+         margin-left: 20px !important;
+         }
+         }
+         .column {
+         float: left;
+         }
+         @media (max-width: 700px) {
+         .row,
+         .navbar {
+         flex-direction: column;
+         }
+         }
+         /* Clearfix (clear floats) */
+         .row::after {
+         content: "";
+         clear: both;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         }
+         @media only screen and (max-width: 607px) {
+         .column {
+         margin-left: 20px;
+         }
+         }
+         @media only screen and (max-width:601px) {
+         .testHeader {
+         font-size: 25px;
+         margin-top: -905px !important;
+         }
+         }
+         @media only screen and (max-width:601px) {
+         .img {
+         height: 900px !important;
+         }
+         }
+         @media only screen and (max-width:601px) {
+         .testContent {
+         margin-left: 45px;
+         }
+         }
+         .testHeader {
+         margin-top: -575px;
+         text-align: center;
+         color: white;
+         font-family: Verdana;
+         }
+         @media only screen and (min-width: 1200px) {
+         .testContent {
+         margin-top: 100px;
+         margin-left: 190px;
+         }
+         }
+         @media only screen and (min-width: 1200px) {
+         .testHeader {
+         font-size: 35px;
+         }
+         }
+         @media only screen and (min-width: 1200px) {
+         .testContent .row {
+         margin-left: 135px !important;
+         }
+         }
+         @media only screen and (min-width: 1200px) {
+         .testContent .column {
+         margin-left: 60px;
+         }
+         }
+         @media only screen and (min-width: 1200px) {
+         .testContent .column {
+         margin-left: 60px;
+         }
+         }
+         * {
+         box-sizing: border-box;
+         }
+         .customer {
+         font-size: 14px;
+         font-family: Verdana;
+         }
+         .custometPara {
+         color: #e8a4a4;
+         font-size: 10.5px;
+         width: 270px;
+         font-family: Verdana;
+         }
+         .commercial {
+         font-size: 14px;
+         font-family: Verdana;
+         }
+         .comercialPara {
+         color: #e8a4a4;
+         font-size: 10.5px;
+         width: 270px;
+         font-family: Verdana;
+         }
+         @media only screen and (min-width: 1100px) {
+         .row {
+         margin-left: 300px;
+         }
+         }
+         @media only screen and (min-width: 1101px) {
+         .commercial {
+         margin-left: 45px;
+         }
+         }
+         @media only screen and (min-width: 1101px) {
+         .comercialPara {
+         margin-left: 40px;
+         }
+         }
+         @media only screen and (max-width: 868px) {
+         .commercial {
+         width: 100px;
+         }
+         }
+         @media only screen and (min-width: 1200px) {
+         .blogArea {
+         margin-left: 140px !important;
+         }
+         }
+         @media only screen and (max-width: 609px) {
+         .blogArea {
+         margin-left: 10px;
+         }
+         }
+         @media only screen and (max-width: 609px) {
+         .card {
+         margin-top: 20px;
+         }
+         }
+         .grid-container {
+         display: grid;
+         grid-template-columns: auto auto auto;
+         padding: 20px 120px 0px 120px;
+         }
+         .card {
+         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+         transition: 0.3s;
+         width: 300px;
+         height: 450px;
+         border-radius: 5px;
+         }
+         .card:hover {
+         box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+         }
+         @media only screen and (min-width: 1200px) {
+         .card {
+         margin-left: 40px;
+         }
+         }
+         @media only screen and (min-width: 1200px) {
+         .blogArea .row {
+         margin-left: 110px !important;
+         }
+         }
+         .footer {
+         height: 400px;
+         width: 100%;
+         background-color: black;
+         }
+         #email {
+         height: 50px;
+         margin-left: 610px;
+         width: 260px;
+         }
+         #btn {
+         height: 50px;
+         margin-left: -25px;
+         width: 100px;
+         background-color: #e8a4a4;
+         border: 1px solid #e8a4a4;
+         }
+         @media only screen and (max-width: 609px) {
+         #email {
+         height: 50px;
+         width: 200px;
+         margin-left: 30px;
+         }
+         }
+         @media only screen and (min-width: 768px) {
+         .navbar {
+         width: 100%;
+         }
+         }
+      </style>
+   </head>
+   <body>
+      <!-------NAVBAR SECTION------>
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top"
+         style="height: 60px; position: fixed;background-color:white;display: flex;width: 100%;">
+         <img height="60" width="170px" class="navimage"
+            src="https://lh3.googleusercontent.com/XXUj_S2yprr_svvmycBqe2lXY-puttvqrn38GrhIhn0Bk6vm-Nc3NznJsdwyYMM2n7I=w412-h732-rw"
+            style="margin-left: 30px;">
+         <div class='demopadding'>
+            <div class='icon social fb'><i class='fa fa-facebook'></i></div>
+            <div class='icon social tw'><i class='fa fa-twitter'></i></div>
+            <div class='icon social in'><i class='fa fa-linkedin'></i></div>
+            <button class="hamburger">&#9776;</button>
+            <button class="cross">&#735;</button>
+            <ul class="menu">
+               <a href="#">
+                  <li>Home</li>
+               </a>
+               <a href="#">
+                  <li>About</li>
+               </a>
+               <a href="#">
+                  <li>Product</li>
+               </a>
+               <a href="#">
+                  <li>Events</li>
+               </a>
+               <a href="#">
+                  <li>Calender</li>
+               </a>
+               <a href="#">
+                  <li>Blogs</li>
+               </a>
+               <a href="#">
+                  <li>Contact</li>
+               </a>
+            </ul>
+         </div>
+         </div>
+      </nav>
+      <br><br><br>
+      <!-----END--NAVBAR SECTION------>
+      <!-------Enterprise Markting and Customer Enterprise------>
+      <section class="">
+         <div class="grid-box">
+            <div class="box-content">
+               <h1>Enterprise Markting and Customer Enterprise</h1>
+               <p>LEVERAGE DATA TO DRIVE PERSONALIZATION AT SCALE</p>
+               <button
+                  style="height: 50px;width: 180px;background-color: #c8b39c;color: white;border: 1px solid #c8b3;">The
+               Globe Translation</button>
+               <button style="height: 50px;width: 140px;"><span style="padding-right:25px;"><i
+                  class="fa fa-play-circle" aria-hidden="true"></i>Explore</span></button>
+            </div>
+         </div>
+      </section>
+      <!-----End--Enterprise Markting and Customer Enterprise------>
+      <!----THE DIGITAL SAVVY PHARMA MARKETET 2020------>
+      <section class="image-section">
+         <div class="grid-image">
+            <img src="https://cdn9.dissolve.com/p/D1061_214_317/D1061_214_317_1200.jpg" width="100%" height="500px"
+               alt="" style="opacity: 0.9;">
+            <div class="image-content">
+               <h1><b>THE DIGITAL SAVVY PHARMA MARKETET 2020</b> </h1>
+               <h3><b>"Must have tool for every pharma markter"</h3>
+               </p>
+               <button style="height: 50px;width: 140px;"><span style="padding-right:25px;"><i
+                  class="fa fa-play-circle" aria-hidden="true"></i><b>Download</b></span></button>
+            </div>
+         </div>
+      </section>
+      <br><br><br>
+      <!----End---THE DIGITAL SAVVY PHARMA MARKETET 2020------>
+      <!------company--Services------>
+      <Section class="companyService">
+         <div class="service-header">
+            <h1>Company</h1>
+            <p>Servicess</p>
+         </div>
+         <div class="company">
+            <div class="row">
+               <div class="column">
+                  <h1 class="customer"><b>Customer Experience</b></h1>
+                  <p class="custometPara">A must have tool for
+                     pharma marketers to
+                     gain insights into a latests channel prefer-
+                     ence,markiting bugdgeted allocation,tech-nology utilization
+                  </p>
+               </div>
+               <div class="column">
+                  <i class="fa fa-handshake-o" aria-hidden="true"
+                     style="font-size: 50px ;margin-left: 70px;color: white;background-color: #e8a4a4;border-radius:100%;padding:25px 20px 25px 20px"></i>
+                  <i class="fa fa-floppy-o" aria-hidden="true"
+                     style="font-size: 50px;color: white;margin-left: 70px; background-color: #e8a4a4;border-radius:100%;padding:25px 20px 25px 20px"></i>
+               </div>
+               <div class="column">
+                  <h1 class="commercial">
+                     CO-Commerciallization
+                  </h1>
+                  <p class="comercialPara">A must have tool for pharma marketers to
+                     gain insights into a latests channel prefer-
+                     ence,markiting bugdgeted allocation,tech-nology utilization
+                  </p>
+               </div>
+            </div>
+            <div class="row">
+               <div class="column">
+                  <h1 class="customer"><b>Customer Experience</b></h1>
+                  <p class="custometPara">A must have tool for
+                     pharma marketers to
+                     gain insights into a latests channel prefer-
+                     ence,markiting bugdgeted allocation,tech-nology utilization
+                  </p>
+               </div>
+               <div class="column">
+                  <i class="fa fa-bar-chart" aria-hidden="true"
+                     style="font-size: 50px ;margin-left: 70px;color: white;background-color: #e8a4a4;border-radius:100%;padding:25px 20px 25px 20px"></i>
+                  <i class="fa fa-handshake-o" aria-hidden="true"
+                     style="font-size: 50px;color: white;margin-left: 70px; background-color: #e8a4a4;border-radius:100%;padding:25px 20px 25px 20px"></i>
+               </div>
+               <div class="column">
+                  <h1 class="commercial">
+                     R&D Medical Transformation
+                  </h1>
+                  <p class="comercialPara">A must have tool for pharma marketers to
+                     gain insights into a latests channel prefer-
+                     ence,markiting bugdgeted allocation,tech-nology utilization
+                  </p>
+               </div>
+            </div>
+            <div class="row">
+               <div class="column">
+                  <h1 class="customer"><b>Customer Experience</b></h1>
+                  <p class="custometPara">A must have tool for
+                     pharma marketers to
+                     gain insights into a latests channel prefer-
+                     ence,markiting bugdgeted allocation,tech-nology utilization
+                  </p>
+               </div>
+               <div class="column">
+                  <i class="fa fa-cog" aria-hidden="true"
+                     style="font-size: 50px ;margin-left: 70px;color: white;background-color: #e8a4a4;border-radius:100%;padding:25px 20px 25px 20px"></i>
+                  <i class="fa fa-television" aria-hidden="true"
+                     style="font-size: 50px;color: white;margin-left: 70px; background-color: #e8a4a4;border-radius:100%;padding:25px 20px 25px 20px"></i>
+               </div>
+               <div class="column">
+                  <h1 class="commercial">
+                     Omnipresence CMX Platform
+                  </h1>
+                  <p class="comercialPara">A must have tool for pharma marketers to
+                     gain insights into a latests channel prefer-
+                     ence,markiting bugdgeted allocation,tech-nology utilization
+                  </p>
+               </div>
+            </div>
+         </div>
+      </Section><br><br>
+      <!----End--company--Services------>
+      <!------inspirational Testimony--------->
+      <Section>
+         <div class="imageTestimony">
+            <img class="img"
+               src="https://hdwallpapers.imgix.net/wallpaper-36461567703744jny526nlq7.jpg?auto=compress&cs=tinysrgb&dpr=1"
+               width="100%" height="700px" alt="" style="opacity: 0.;">
+            <h1 class="testHeader">INSPIRATIONAL TESTIMONY</h1>
+            <div class="testContent">
+               <div class="row">
+                  <div class="column">
+                     <i class="fa fa-user-circle" aria-hidden="true" class="user"
+                        style="font-size: 80px;color: white;margin-left: 70px;opacity: 40%"></i>
+                     <h1
+                        style="color: white;font-size:17px;font-family: Verdana, Geneva, Tahoma, sans-serif;width: 250px;opacity: 0.5;text-align: center;">
+                        As the
+                        president,he is responsible for new strategic initives
+                     </h1>
+                     <br>
+                     <p
+                        style="color: white;font-size:20px;margin-left:93px;font-family: Verdana, Geneva, Tahoma, sans-serif;opacity: 0.5;">
+                        <b>President</b>
+                     </p>
+                  </div>
+                  <div class="column">
+                     <i class="fa fa-user-circle" aria-hidden="true"
+                        style="font-size: 80px;color: white;margin-left: 70px;opacity:0.7"></i>
+                     <h1 style="color: white;font-size:17px;width: 250px;opacity: 0.5;
+                        text-align: center;font-family: Verdana, Geneva, Tahoma, sans-serif;">As one of the cofounder and
+                        the CEO,He is <br>Responsible for the company"s <br>strategy
+                     </h1>
+                     </h1>
+                     <br>
+                     <p
+                        style="color: white;font-size:20px; font-family: Verdana, Geneva, Tahoma, sans-serif;margin-left:85px;opacity: 0.5;">
+                        <b>CEO</b>
+                     </p>
+                  </div>
+                  <div class="column">
+                     <i class="fa fa-user-circle" aria-hidden="true"
+                        style="font-size: 80px;color: white;margin-left: 70px;opacity:0.7"></i>
+                     <h1
+                        style="color: white;font-size:17px;width: 250px;opacity: 0.5;text-align: center;font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                        is Responsible
+                        for global business development and strategic account management
+                     </h1>
+                     <br>
+                     <p
+                        style="color: white;font-size:20px; font-family: Verdana, Geneva, Tahoma, sans-serif;margin-left:85px;opacity: 0.5;">
+                        <b>Excutive VP</b>
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </Section><br><br>
+      <!-----End-inspirational Testimony--------->
+      <!-----Recent-Blog------------>
+      <section>
+         <div class="recentBlogs" style="margin-top:140px">
+            <h1
+               style="font-size: 25px;color: black;font-family: Verdana; display:flex;justify-content: center;align-items: center; ">
+               RECENT BLOGS
+            </h1>
+            <p
+               style="font-size: 15px;text-align: center;color:#e8a4a4;font-family: Verdana; display:flex;justify-content: center;align-items: center;">
+               Our Blog
+            </p>
+            <div class="blogArea">
+               <div class="row">
+                  <div class="column">
+                     <div class="card">
+                        <img src="https://image.freepik.com/free-photo/laptop-with-blank-screen-wooden-table-cup-coffee_1232-1220.jpg"
+                           alt="Avatar" style="width:100%">
+                        <div class="grid-container">
+                           <h4
+                              style="height: 250px;width: 100px;margin-top:-24px;background-color: burlywood;font-size: 20px; margin-left: -120px;">
+                              <span style="font-size: 50px;">18</span><br><span
+                                 style="text-align: center;">janyary<br></span> <span
+                                 style="margin-left:15px;"></span>2019</span>
+                           </h4>
+                           <h1
+                              style="font-size: 20px;width: 200px;font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                              Press Relese
+                           </h1>
+                           <p
+                              style="font-size:12px;width: 200px;margin-top:50px;margin-left: -200px;font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                              Indegene
+                              Acquires DT Associ-<br>ates,Provides End-To-End<br> Enterprise Solution for
+                              Cus<br>tomer Excellence -From<br> Consulting to Operations
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="column">
+                     <div class="card">
+                        <img src="https://image.freepik.com/free-photo/laptop-with-blank-screen-wooden-table-cup-coffee_1232-1220.jpg"
+                           alt="Avatar" style="width:100%">
+                        <div class="grid-container">
+                           <h4
+                              style="height: 250px;width: 100px;margin-top:-24px;background-color: burlywood;font-size: 20px; margin-left: -120px;">
+                              <span style="font-size: 50px;">18</span><br><span
+                                 style="text-align: center;">janyary<br></span> <span
+                                 style="margin-left:15px;"></span>2019</span>
+                           </h4>
+                           <h1 style="font-size: 20px;width: 200px;">Webinars</h1>
+                           <p
+                              style="font-size:12px;width: 200px;margin-top:50px;margin-left: -200px;font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                              Healthy
+                              Workplace Confer-<br>ence & Awards 2019 -inde-<br>gene enters "platinum League<br>
+                              Of Healthy Workplace"
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="column">
+                     <div class="card">
+                        <img src="https://image.freepik.com/free-photo/laptop-with-blank-screen-wooden-table-cup-coffee_1232-1220.jpg"
+                           alt="Avatar" style="width:100%">
+                        <div class="grid-container">
+                           <h4
+                              style="height: 250px;width: 100px;margin-top:-24px;background-color: burlywood;font-size: 20px; margin-left: -120px;">
+                              <span style="font-size: 50px;">18</span><br><span
+                                 style="text-align: center;">janyary<br></span> <span
+                                 style="margin-left:15px;"></span>2019</span>
+                           </h4>
+                           <h1 style="font-size: 20px;width: 200px;">Press Relese</h1>
+                           <p style="font-size:12px;width: 200px;margin-top:50px;margin-left: -200px;">Exemplary PV
+                              solution to aug-<br>ment efficiency in small and <br> medium size pharma companies
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <br><br><br>
+      <!----End----Recent-Blog----->
+      <!--Footer-section-->
+      <section>
+         <div class="footer">
+            <div class="footer-content">
+               <h1
+                  style="display: flex;justify-content: center; align-items: center; color: white;padding-top: 100px;font-size: 35px;font-family: Verdana;">
+                  NEWSLETTER
+               </h1>
+            </div>
+            <form id="form">
+               <input type="text" placeholder="Enter Email" id="email">
+               <span id="emailerror" class="text-danger"></span>
+               <button type="submit" id="btn">Subscribe</button>
+            </form>
+         </div>
+      </section>
+      <!-------end-Footer-section-->
+      <script>
+         $(document).ready(function () {
+         
+             $(".cross").hide();
+             $(".menu").hide();
+             $(".hamburger").click(function () {
+                 $(".menu").slideToggle("slow", function () {
+                     $(".hamburger").hide();
+                     $(".cross").show();
+                 });
+             });
+         
+             $(".cross").click(function () {
+                 $(".menu").slideToggle("slow", function () {
+                     $(".cross").hide();
+                     $(".hamburger").show();
+                 });
+             });
+         
+         });
+         /* Email Validate */
+         document.querySelector("#myform").addEventListener('submit', validation);
+         
+         function validation(e) {
+             e.preventDefault();
+             var Email = document.getElementById("email").value;
+             var emailcheck = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+             if (emailcheck.test(Email)) {
+                 document.getElementById('emailerror').innerHTML = " ";
+             } else {
+                 document.getElementById('emailerror').innerHTML = "invalid email";
+         
+             }
+         }
+      </script>
+   </body>
+</html>
